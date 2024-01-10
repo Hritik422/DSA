@@ -12,8 +12,10 @@
 class Solution {
 public:
     map<int,vector<int>>mp;
+    int size=0;
     void dfs(TreeNode* root){
         if(!root)return;
+        size++;
         if(root->left){
             mp[root->val].push_back(root->left->val);
             mp[root->left->val].push_back(root->val);
