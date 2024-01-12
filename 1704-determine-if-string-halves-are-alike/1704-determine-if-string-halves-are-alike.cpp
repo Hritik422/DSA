@@ -5,9 +5,7 @@ public:
         vector<char>v={'A','E','I','O','U','a','e','i','o','u'};
         for(int i=0;i<n/2;i++){
             if(binary_search(v.begin(),v.end(),s[i]))cnt++;
-        }
-        for(int i=n/2;i<n;i++){
-            if(binary_search(v.begin(),v.end(),s[i]))cnt1++;
+            if(binary_search(v.begin(),v.end(),s[n-i-1]))cnt1++;
         }
         return cnt==cnt1;
     }
