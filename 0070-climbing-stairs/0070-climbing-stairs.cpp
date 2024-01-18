@@ -6,7 +6,7 @@ public:
         if(n==2)
             return 2;
         int one=1,two=2;
-        long long int ans=0;
+        int ans=0;
        for(int i=3;i<=n;i++){
            ans=one+two;
            one=two;
