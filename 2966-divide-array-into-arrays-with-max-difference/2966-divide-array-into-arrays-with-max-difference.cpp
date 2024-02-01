@@ -10,9 +10,8 @@ public:
                 m++;
                 i+=2;
             }
-            
+            else return {};
         }
-        if(m*3!=n)return {};
         return ans;
     }
 };
