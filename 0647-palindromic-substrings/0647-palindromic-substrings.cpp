@@ -1,25 +1,20 @@
 class Solution {
 public:
-    bool pal(string s,int i,int j){
-        if(j<i)return 0;
-        while(j>i){
-            if(s[j]!=s[i])return false;
-            i++;
-            j--;
+    int pal(string s,int i,int j,int n){
+        int ans=0;
+        while(i>=0 && j<n){
+            if(s[j]!=s[i])return ans;
+            i--;
+            j++;
+            ans++;
         }
-        return true;
+        return ans;
     }
     int countSubstrings(string s) {
-        map<char,set<int>>mp;
         int i,n=s.size(),ans=0;
-        for(i=0;i<n;i++)mp[s[i]].insert(i);
-        for(auto it:mp){
-            for(auto inx:it.second){
-                auto inx2=inx;
-                for(auto inx2:it.second){
-                    if(pal(s,inx,inx2))ans++;
-                }
-            }
+        for(i=0;i<n;i++){
+            ans+=pal(s,i,i,n);
+            ans+=pal(s,i,i+1,n);
         }
         return ans;
         
