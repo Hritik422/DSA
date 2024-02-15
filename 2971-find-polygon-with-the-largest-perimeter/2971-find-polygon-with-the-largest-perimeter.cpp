@@ -10,8 +10,6 @@ public:
             }
             sum+=nums[i];
         }
-        
-        if(last==-1)return last;
         return ans;
         
     }
