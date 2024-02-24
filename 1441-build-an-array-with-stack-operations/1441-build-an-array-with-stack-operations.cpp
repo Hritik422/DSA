@@ -1,21 +1,21 @@
 class Solution {
 public:
     vector<string> buildArray(vector<int>& target, int n) {
-        int pop=0,stream=1;;
+        int pop=0,stream=1,dif,d,n1=target.size(),i;
         vector<string>ans;
-        for(int i=0;i<target.size();i++){
-            int push=0;
-            while(stream!=target[i]){
-                stream++;
-                push++;
+        for(i=0;i<n1;i++){
+            dif=target[i]-stream;
+            d = dif;
+            while(dif){
                 ans.push_back("Push");
+                dif--;
             }
-            while(push!=0){
+            while(d){
                 ans.push_back("Pop");
-                push--;
+                d--;
             }
             ans.push_back("Push");
-            stream++;
+            stream=target[i]+1;
         }
         return ans;
     }
