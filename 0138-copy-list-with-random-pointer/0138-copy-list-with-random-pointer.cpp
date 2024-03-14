@@ -21,7 +21,7 @@ public:
         Node* temp=head;
         Node* tem= new Node(temp->val);
         Node* res=tem;
-        map<Node*,Node*>mp;
+        unordered_map<Node*,Node*>mp;
         while(temp){
                 mp[temp]=tem;
                 temp=temp->next;
