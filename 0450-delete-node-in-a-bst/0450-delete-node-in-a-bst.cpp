@@ -11,10 +11,10 @@
  */
 class Solution {
 public:
-    TreeNode* getRightMostNode(TreeNode* root)
+    TreeNode* rightt(TreeNode* root)
 	{
          if(!root->right) { return root;  }
-         return getRightMostNode(root->right);
+         return rightt(root->right);
     }
         
     TreeNode* deleteNode(TreeNode* root, int key) {
@@ -32,8 +32,8 @@ public:
               TreeNode* lst = root->left;
               TreeNode* rst = root->right;
               root->left=NULL,root->right=NULL;
-              TreeNode* rightMostInLst = getRightMostNode(lst);  
-              rightMostInLst->right = rst; 
+              TreeNode* r = rightt(lst);  
+              r->right = rst; 
               return lst;     
            } 
         }
